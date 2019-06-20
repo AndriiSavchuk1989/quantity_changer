@@ -14,13 +14,18 @@ class QuantityChangerComponent extends React.Component {
   }
 
   decrease() {
-    if (this.state.quantity === 0) {
+    if (this.state.quantity === 1) {
       this.setState({ disabled: !this.state.disabled });
     }
-    this.setState({ quantity: this.state.quantity - 1 });
-    console.log(
-      `you have decreased quantity for product with ${this.state.id}`
-    );
+    if (this.state.quantity >= 1) {
+      this.setState({
+        quantity: this.state.quantity - 1,
+        disabled: false
+      });
+      console.log(
+        `you have decreased quantity for product with ${this.state.id}`
+      );
+    }
   }
 
   increase() {
