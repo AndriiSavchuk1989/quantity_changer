@@ -37,7 +37,7 @@ class QuantityChangerComponent extends React.Component {
 
   render() {
     return (
-      <QuantityChanger.Wrapper>
+      <QuantityChanger.Wrapper quantity={this.state.quantity}>
         <QuantityChanger.DecreaseButton
           onClick={this.decrease}
           disabled={this.state.disabled ? "disabled" : ""}

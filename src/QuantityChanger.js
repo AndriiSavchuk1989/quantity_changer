@@ -1,11 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const QuantityChanger = {};
 
-QuantityChanger.Wrapper = styled.div`
-  display: flex;
-  height: 16px;
-`;
+QuantityChanger.Wrapper = styled.div(({ quantity }) => {
+  const displayProp = quantity ? "flex" : "none";
+  return css`
+    display: ${displayProp};
+    height: 16px;
+  `;
+});
 
 QuantityChanger.Button = styled.button`
   text-align: center;
